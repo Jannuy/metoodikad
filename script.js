@@ -6,7 +6,10 @@ const subjects = {
   "Vene keel": [15, 4.6],
   "Andmebaasid": [20, 3.9],
   "Programmeerimine": [12, 4.5],
-  "Inglise keel": [16, 4.2]
+  "Inglise keel": [16, 4.2],
+  "Füüsika": [14, 4.1],
+  "Keemia": [13, 4.0],
+  "Kunst": [17, 4.4]
 };
 
 function renderSummary() {
