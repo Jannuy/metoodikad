@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Õppeainete tagasiside</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Õppeainete tagasiside</h1>
+      <nav>
+        <a href="#vorm">Tagasiside</a>
+        <a href="#ulevaade">Ülevaade</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">Õpilase tagasiside</span>
+        <h2>Aita meil õppeaineid paremaks muuta.</h2>
+        <p>Anna läbitud õppeainele hinne ja soovi korral lisa kommentaar.</p>
+      </div>
+    </section>
+
+    <section id="vorm" class="card">
+      <h2>Tagasiside vorm</h2>
+
+      <form id="feedbackForm">
+        <div class="grid">
+          <label>
+            Nimi
+            <input id="name" type="text" placeholder="Sisesta oma nimi" required>
+            <small class="error" id="nameError"></small>
+          </label>
+
+          <label>
+            Klass
+            <input id="className" type="text" placeholder="Näiteks 10.B" required>
+            <small class="error" id="classError"></small>
+          </label>
+        </div>
+
+        <label>
+          Õppeaine
+          <select id="subject" required>
+            <option value="">Vali õppeaine</option>
+            <option>Matemaatika</option>
+            <option>Vene keel</option>
+            <option>Andmebaasid</option>
+            <option>Programmeerimine</option>
+            <option>Inglise keel</option>
+          </select>
+          <small class="error" id="subjectError"></small>
+        </label>
+
+        <fieldset>
+          <legend>Hinne</legend>
+          <div class="rating">
+            <label><input type="radio" name="rating" value="1"> 1</label>
+            <label><input type="radio" name="rating" value="2"> 2</label>
+            <label><input type="radio" name="rating" value="3"> 3</label>
+            <label><input type="radio" name="rating" value="4"> 4</label>
+            <label><input type="radio" name="rating" value="5"> 5</label>
+          </div>
+          <small class="error" id="ratingError"></small>
+        </fieldset>
+
+        <label>
+          Kommentaar <span>(valikuline)</span>
+          <textarea id="comment" maxlength="500" placeholder="Kirjuta soovi korral kommentaar..."></textarea>
+        </label>
+
+        <button type="submit">Saada tagasiside</button>
+        <p id="successMessage" class="success"></p>
+      </form>
+    </section>
+
+    <section id="ulevaade" class="card">
+      <h2>Õppeainete ülevaade</h2>
+      <p class="muted">Näidisandmed õpetaja/kooli töötaja vaate jaoks.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Õppeaine</th>
+              <th>Vastuseid</th>
+              <th>Keskmine</th>
+            </tr>
+          </thead>
+          <tbody id="summaryBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Õppeainete tagasiside rakendus</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
