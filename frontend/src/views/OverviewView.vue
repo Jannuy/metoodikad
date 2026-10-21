@@ -28,8 +28,8 @@ onMounted(loadSummary);
     <p v-else-if="error" class="error">{{ error }}</p>
     <div v-else class="table-wrap">
       <table>
-        <thead><tr><th>Õppeaine</th><th>Vastuseid</th><th>Keskmine</th></tr></thead>
-        <tbody><tr v-if="!summary.length"><td colspan="3">Tagasisidet veel ei ole.</td></tr><tr v-for="item in summary" :key="item.subject"><td>{{ item.subject }}</td><td>{{ item.count }}</td><td>{{ item.average }}</td></tr></tbody>
+        <thead><tr><th>Õppeaine</th><th>Vastuseid</th><th>Üldhinne</th><th>Tunni arusaadavus</th><th>Kaasarääkimise võimalus</th></tr></thead>
+        <tbody><tr v-if="!summary.length"><td colspan="5">Tagasisidet veel ei ole.</td></tr><tr v-for="item in summary" :key="item.subject"><td>{{ item.subject }}</td><td>{{ item.count }}</td><td>{{ item.average }}</td><td>{{ item.clarity_average ?? "—" }}</td><td>{{ item.participation_average ?? "—" }}</td></tr></tbody>
       </table>
     </div>
   </section>
